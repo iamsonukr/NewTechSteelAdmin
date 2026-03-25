@@ -11,6 +11,7 @@ const blogSchema = new mongoose.Schema(
     coverImage: { type: String },
     author: { type: String, default: "Admin" },
     tags: [{ type: String }],
+    canonicalUrl: { type: String },
     isPublished: { type: Boolean, default: false },
     publishedAt: { type: Date },
     isActive: { type: Boolean, default: true },
@@ -19,6 +20,7 @@ const blogSchema = new mongoose.Schema(
       metaDescription: { type: String },
       metaKeywords: [{ type: String }],
     },
+    scheduledDate: { type: Date },
   },
   { timestamps: true }
 );

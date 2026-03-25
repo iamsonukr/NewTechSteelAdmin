@@ -23,7 +23,6 @@ import enquiryRoutes from './routes/enquiry.routes.js';
 import pageRoutes          from "./routes/page.routes.js";
 import contactDetailRoutes from "./routes/contactDetail.routes.js";
 import heroBannerRoutes    from "./routes/heroBanner.routes.js";
-import { seed } from './seed.js';
 
 dotenv.config();
 connectDB();
@@ -40,6 +39,8 @@ const ALLOWED_ORIGINS = [
   "http://localhost:5173",
   "http://localhost:5174",
   "http://localhost:5176",
+  "http://localhost:3000",
+
 ];
 
 // ✅ CORS

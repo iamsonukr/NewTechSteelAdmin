@@ -5,8 +5,8 @@ import { protect } from '../middleware/auth.middleware.js';
 import upload from '../middleware/upload.middleware.js';
 
 router.get("/", getAll);
-router.get("/:id", getOneById);
 router.get("/:slug", getOne);
+router.get("/single/:id", getOneById);
 
 router.post("/", protect, upload.single("coverImage"), create);
 router.put("/:id", protect, upload.single("coverImage"), update);

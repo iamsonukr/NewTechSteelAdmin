@@ -10,7 +10,14 @@ import toast from "react-hot-toast";
 export default function BlogCreate() {
   const navigate = useNavigate();
   const { categories } = useBlogCategories();
-  const [formData, setFormData] = useState({ title: "", excerpt: "", content: "", category: "", author: "Admin", tags: "", isPublished: false, isActive: true, seo: { metaTitle: "", metaDescription: "" } });
+  const [formData, setFormData] = useState({
+    title: "", excerpt: "", content: "", category: "",
+    author: "Admin", tags: "",
+    canonicalUrl: "",        // ✅ new
+    scheduledDate: "",       // ✅ new
+    isPublished: false, isActive: true,
+    seo: { metaTitle: "", metaDescription: "" }
+  });
   const [coverImage, setCoverImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -57,6 +64,8 @@ export default function BlogCreate() {
             <h3 className="font-semibold text-gray-800 dark:text-white/90 text-sm">SEO</h3>
             <div><label className={labelCls}>Meta Title</label><input type="text" value={formData.seo.metaTitle} onChange={(e) => setSeo("metaTitle", e.target.value)} className={inputCls} /></div>
             <div><label className={labelCls}>Meta Description</label><textarea value={formData.seo.metaDescription} onChange={(e) => setSeo("metaDescription", e.target.value)} rows={2} className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-2.5 text-sm dark:text-white/90 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/20 dark:bg-gray-900 resize-none" /></div>
+            {/* ✅ Canonical URL */}
+            <div><label className={labelCls}>Canonical URL</label><input type="text" value={formData.canonicalUrl} onChange={(e) => set("canonicalUrl", e.target.value)} className={inputCls} placeholder="https://example.com/blog/my-post" /></div>
           </div>
         </div>
         <div className="space-y-5">
@@ -71,6 +80,8 @@ export default function BlogCreate() {
             </div>
             <div><label className={labelCls}>Author</label><input type="text" value={formData.author} onChange={(e) => set("author", e.target.value)} className={inputCls} /></div>
             <div><label className={labelCls}>Tags (comma separated)</label><input type="text" value={formData.tags} onChange={(e) => set("tags", e.target.value)} className={inputCls} /></div>
+            {/* ✅ Scheduled Date */}
+            <div><label className={labelCls}>Scheduled Date</label><input type="datetime-local" value={formData.scheduledDate} onChange={(e) => set("scheduledDate", e.target.value)} className={inputCls} /></div>
             <div className="flex items-center gap-3"><input type="checkbox" id="isPublished" checked={formData.isPublished} onChange={(e) => set("isPublished", e.target.checked)} className="w-4 h-4 rounded border-gray-300 text-brand-500" /><label htmlFor="isPublished" className="text-sm text-gray-700 dark:text-gray-400">Published</label></div>
             <div className="flex items-center gap-3"><input type="checkbox" id="isActive" checked={formData.isActive} onChange={(e) => set("isActive", e.target.checked)} className="w-4 h-4 rounded border-gray-300 text-brand-500" /><label htmlFor="isActive" className="text-sm text-gray-700 dark:text-gray-400">Active</label></div>
           </div>
