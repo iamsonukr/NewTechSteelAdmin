@@ -19,6 +19,15 @@ export const getOne = async (req, res) => {
     res.status(500).json({ success: false, message: err.message });
   }
 };
+export const getOneById = async (req, res) => {
+  try {
+    const category = await BlogCategory.findById(req.params.id);
+    if (!category) return res.status(404).json({ success: false, message: "Category not found" });
+    res.json({ success: true, data: category });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
 
 export const create = async (req, res) => {
   try {

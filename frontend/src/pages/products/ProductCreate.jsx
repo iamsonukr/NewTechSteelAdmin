@@ -65,7 +65,7 @@ export default function ProductCreate() {
 
       await createProduct(fd);
       toast.success("Product created!");
-      navigate("/products");
+      navigate("/admin-panel/products");
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to create product");
     } finally {
@@ -250,7 +250,7 @@ export default function ProductCreate() {
             </button>
             <button
               type="button"
-              onClick={() => navigate("/products")}
+              onClick={() => navigate("/admin-panel/products")}
               className="w-full py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             >
               Cancel

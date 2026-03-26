@@ -40,7 +40,7 @@ export default function GalleryEdit() {
       if (image) fd.append("image", image);
       await updateGallery(id, fd);
       toast.success("Gallery item updated!");
-      navigate("/gallery");
+      navigate("/admin-panel/gallery");
     } catch (err) { toast.error(err.response?.data?.message || "Failed to update"); }
     finally { setLoading(false); }
   };
@@ -72,7 +72,7 @@ export default function GalleryEdit() {
           </div>
           <div className="flex gap-3 pt-2">
             <button type="submit" disabled={loading} className="px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50">{loading ? "Saving..." : "Update Image"}</button>
-            <button type="button" onClick={() => navigate("/gallery")} className="px-6 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Cancel</button>
+            <button type="button" onClick={() => navigate("/admin-panel/gallery")} className="px-6 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Cancel</button>
           </div>
         </form>
       </div>

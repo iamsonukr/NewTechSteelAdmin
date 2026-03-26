@@ -106,8 +106,8 @@ const Calendar = () => {
   return (
     <>
       <PageMeta
-        title="React.js Calendar Dashboard | BookMyPoster - Next.js Admin Dashboard Template"
-        description="This is React.js Calendar Dashboard page for BookMyPoster - React.js Tailwind CSS Admin Dashboard Template"
+        title="React.js Calendar Dashboard | NewTechSteel - Next.js Admin Dashboard Template"
+        description="This is React.js Calendar Dashboard page for NewTechSteel - React.js Tailwind CSS Admin Dashboard Template"
       />
       <div className="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
         <div className="custom-calendar">

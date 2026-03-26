@@ -37,7 +37,7 @@ export default function EnquiryDetail() {
   return (
     <div>
       <div className="flex items-center gap-3 mb-6">
-        <button onClick={() => navigate("/enquiries")} className="p-2 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"><ArrowLeft size={18} /></button>
+        <button onClick={() => navigate("/admin-panel/enquiries")} className="p-2 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"><ArrowLeft size={18} /></button>
         <div>
           <h1 className="text-2xl font-bold text-gray-800 dark:text-white/90">Enquiry Detail</h1>
           <p className="text-sm text-gray-500 dark:text-gray-400">From {enquiry.name} · {new Date(enquiry.createdAt).toLocaleString()}</p>

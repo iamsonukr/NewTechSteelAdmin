@@ -51,7 +51,7 @@ export default function ContactEdit() {
         isActive:      String(formData.isActive),
       });
       toast.success("Contact updated!");
-      navigate("/contact-details");
+      navigate("/admin-panel/contact-details");
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to update contact");
     } finally { setLoading(false); }
@@ -63,7 +63,7 @@ export default function ContactEdit() {
     <div>
       <PageHeader title="Edit Branch" breadcrumbs={[{ label: "Dashboard", to: "/dashboard" }, { label: "Contact Details", to: "/contact-details" }, { label: "Edit" }]} />
       <div className="max-w-3xl">
-        <ContactForm formData={formData} setFormData={setFormData} loading={loading} onSubmit={handleSubmit} onCancel={() => navigate("/contact-details")} submitLabel="Update Branch" />
+        <ContactForm formData={formData} setFormData={setFormData} loading={loading} onSubmit={handleSubmit} onCancel={() => navigate("/admin-panel/contact-details")} submitLabel="Update Branch" />
       </div>
     </div>
   );

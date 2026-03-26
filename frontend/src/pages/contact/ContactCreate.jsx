@@ -34,7 +34,7 @@ export default function ContactCreate() {
         isActive:      String(formData.isActive),
       });
       toast.success("Contact created!");
-      navigate("/contact-details");
+      navigate("/admin-panel/contact-details");
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to create contact");
     } finally { setLoading(false); }
@@ -44,7 +44,7 @@ export default function ContactCreate() {
     <div>
       <PageHeader title="Add Branch" breadcrumbs={[{ label: "Dashboard", to: "/dashboard" }, { label: "Contact Details", to: "/contact-details" }, { label: "Add" }]} />
       <div className="max-w-3xl">
-        <ContactForm formData={formData} setFormData={setFormData} loading={loading} onSubmit={handleSubmit} onCancel={() => navigate("/contact-details")} submitLabel="Save Branch" />
+        <ContactForm formData={formData} setFormData={setFormData} loading={loading} onSubmit={handleSubmit} onCancel={() => navigate("/admin-panel/contact-details")} submitLabel="Save Branch" />
       </div>
     </div>
   );

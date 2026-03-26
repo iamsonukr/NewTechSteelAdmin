@@ -44,7 +44,7 @@ export default function HeroBannerEdit() {
       if (bgImage) fd.append("backgroundImage", bgImage);
       await updateBanner(id, fd);
       toast.success("Banner updated!");
-      navigate("/hero-banners");
+      navigate("/admin-panel/hero-banners");
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to update banner");
     } finally { setLoading(false); }
@@ -101,7 +101,7 @@ export default function HeroBannerEdit() {
           </div>
           <div className="flex flex-col gap-2">
             <button type="submit" disabled={loading} className="w-full py-2.5 bg-brand-500 hover:bg-brand-600 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50">{loading ? "Saving..." : "Update Banner"}</button>
-            <button type="button" onClick={() => navigate("/hero-banners")} className="w-full py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Cancel</button>
+            <button type="button" onClick={() => navigate("/admin-panel/hero-banners")} className="w-full py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Cancel</button>
           </div>
         </div>
       </form>

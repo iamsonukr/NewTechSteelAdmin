@@ -21,10 +21,10 @@ export default function AuthLayout({
                   src="/images/logo/auth-logo.svg"
                   alt="Logo"
                 /> */}
-                <h1 className="text-3xl text-amber-50" >BookMyPoster</h1>
+                <h1 className="text-3xl text-amber-50" >NewTechSteel</h1>
               </Link>
               <p className="text-center text-gray-400 dark:text-white/60">
-              Welcome to BookMyPoster.com
+              Welcome to NewTechSteel.com
               </p>
             </div>
           </div>

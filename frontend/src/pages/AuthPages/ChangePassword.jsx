@@ -136,7 +136,7 @@ const ChangePassword = () => {
 
             // Optional: Redirect after success
             setTimeout(() => {
-                navigate("/profile"); // Adjust redirect path as needed
+                navigate("/admin-panel/profile"); // Adjust redirect path as needed
             }, 2000);
 
         } catch (error) {

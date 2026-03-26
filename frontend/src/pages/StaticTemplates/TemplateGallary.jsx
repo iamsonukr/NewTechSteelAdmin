@@ -35,7 +35,7 @@ const TemplateGallery = ({
         setDarkMode(isDark);
     }, []);
     const { baseUrl } = usePoster();
-    const image_path = import.meta.env.IMAGE_PATH || 'https://api.bookmyposter.com/';
+    const image_path = import.meta.env.IMAGE_PATH || 'https://api.NewTechSteel.com/';
     const newBaseUrl = `${image_path}uploads/`;
     const formatDate = (dateString) => {
         if (!dateString) return 'N/A';

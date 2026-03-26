@@ -66,7 +66,7 @@ export default function BlogEdit() {
       if (coverImage) fd.append("coverImage", coverImage);
       await updateBlog(id, fd);
       toast.success("Blog updated!");
-      navigate("/blogs");
+      navigate("/admin-panel/blogs");
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to update blog");
     } finally { setLoading(false); }
@@ -118,7 +118,7 @@ export default function BlogEdit() {
           </div>
           <div className="flex flex-col gap-2">
             <button type="submit" disabled={loading} className="w-full py-2.5 bg-brand-500 hover:bg-brand-600 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50">{loading ? "Saving..." : "Update Blog"}</button>
-            <button type="button" onClick={() => navigate("/blogs")} className="w-full py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Cancel</button>
+            <button type="button" onClick={() => navigate("/admin-panel/blogs")} className="w-full py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Cancel</button>
           </div>
         </div>
       </form>

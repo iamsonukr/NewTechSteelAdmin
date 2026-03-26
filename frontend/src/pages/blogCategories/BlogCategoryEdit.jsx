@@ -25,7 +25,7 @@ export default function BlogCategoryEdit() {
     try {
       await updateBlogCategory(id, formData);
       toast.success("Category updated!");
-      navigate("/blog-categories");
+      navigate("/admin-panel/blog-categories");
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to update category");
     } finally { setLoading(false); }
@@ -45,7 +45,7 @@ export default function BlogCategoryEdit() {
           <div className="flex items-center gap-3"><input type="checkbox" id="isActive" checked={formData.isActive} onChange={(e) => setFormData(p => ({ ...p, isActive: e.target.checked }))} className="w-4 h-4 rounded border-gray-300 text-brand-500" /><label htmlFor="isActive" className="text-sm text-gray-700 dark:text-gray-400">Active</label></div>
           <div className="flex gap-3 pt-2">
             <button type="submit" disabled={loading} className="px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50">{loading ? "Saving..." : "Update Category"}</button>
-            <button type="button" onClick={() => navigate("/blog-categories")} className="px-6 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Cancel</button>
+            <button type="button" onClick={() => navigate("/admin-panel/blog-categories")} className="px-6 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Cancel</button>
           </div>
         </form>
       </div>

@@ -35,7 +35,7 @@ export default function ProductCategoryEdit() {
       if (image) fd.append("image", image);
       await updateProductCategory(id, fd);
       toast.success("Category updated!");
-      navigate("/product-categories");
+      navigate("/admin-panel/product-categories");
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to update category");
     } finally { setLoading(false); }
@@ -63,7 +63,7 @@ export default function ProductCategoryEdit() {
           </div>
           <div className="flex gap-3 pt-2">
             <button type="submit" disabled={loading} className="px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50">{loading ? "Saving..." : "Update Category"}</button>
-            <button type="button" onClick={() => navigate("/product-categories")} className="px-6 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Cancel</button>
+            <button type="button" onClick={() => navigate("/admin-panel/product-categories")} className="px-6 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Cancel</button>
           </div>
         </form>
       </div>

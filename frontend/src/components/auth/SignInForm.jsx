@@ -47,7 +47,7 @@ export default function SignInForm() {
       if (response.data.success) {
         const { token, user } = response.data;
         login(token, user.role);
-        navigate("/dashboard");
+        navigate("/admin-panel/dashboard");
       } else {
         setError("Login failed. Please try again.");
       }

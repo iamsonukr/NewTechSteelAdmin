@@ -9,8 +9,8 @@ export default function Images() {
   return (
     <>
       <PageMeta
-        title="React.js Images Dashboard | BookMyPoster - React.js Admin Dashboard Template"
-        description="This is React.js Images page for BookMyPoster - React.js Tailwind CSS Admin Dashboard Template"
+        title="React.js Images Dashboard | NewTechSteel - React.js Admin Dashboard Template"
+        description="This is React.js Images page for NewTechSteel - React.js Tailwind CSS Admin Dashboard Template"
       />
       <PageBreadcrumb pageTitle="Images" />
       <div className="space-y-5 sm:space-y-6">

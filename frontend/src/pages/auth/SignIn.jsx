@@ -23,7 +23,7 @@ export default function SignIn() {
       if (res.data.success) {
         login(res.data.token, res.data.user.role);
         toast.success("Welcome back!");
-        navigate("/dashboard");
+        navigate("/admin-panel/dashboard");
       }
     } catch (err) {
       toast.error(err.response?.data?.message || "Invalid email or password");
